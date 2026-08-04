@@ -88,6 +88,26 @@
         .max-w-custom {
             max-width: 140rem;
         }
+
+        .button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--main);
+            color: #fff;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            text-shadow: 0px 0px 2px #333;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button:hover {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            --tw-translate-y: -0.25rem;
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+        }
     </style>
 </head>
 <body class="bg-brand-back text-brand-dark font-sans min-h-screen selection:bg-brand-lightMain selection:text-brand-dark">
