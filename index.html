@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDA - video</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#000000',
+                            main: '#d6c844',
+                            lightMain: '#d9d296',
+                            green: '#43db9a',
+                            true: '#c1efcc',
+                            orange: '#ffad40',
+                            orangeHover: '#e7ba33',
+                            yellow: '#fff94e',
+                            remove: '#ffb6c1',
+                            lightgray: '#e5e5e5',
+                            lightgrayBack: '#f5f5f5',
+                            back: '#f9f9f9',
+                            gray: '#cacaca',
+                        }
+                    },
+                    borderRadius: {
+                        '2xl': '1rem',
+                        '3xl': '1.5rem',
+                        '4xl': '2rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --dark: #000000;
+            --main: #d6c844;
+            --lightMain: #d9d296;
+            --green: #43db9a;
+            --true: #c1efcc;
+            --orange: #ffad40;
+            --orange-hover: #e7ba33;
+            --yellow: #fff94e;
+            --lightgray: #e5e5e5;
+            --lightgrayBack: #f5f5f5;
+            --back: #f9f9f9;
+            --gray: #cacaca;
+        }
+
+        body {
+            background-color: var(--back);
+            color: var(--dark);
+        }
+
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--lightgrayBack);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gray);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--main);
+        }
+
+        .max-w-custome {
+            max-width: 80rem;
+        }
+
+        h4.text-brand-dark {
+            color: #d6c844 !important;
+        }
+    </style>
+</head>
+<body class="bg-brand-back text-brand-dark font-sans min-h-screen flex flex-col justify-between selection:bg-brand-lightMain selection:text-brand-dark">
+
+    <div>
+        <main class="max-w-custome mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+            
+            <section class="space-y-4">
+                <!-- 3 Links Grid Container -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- CARD 1 -->
+                    <a href="Zlata-1.html" class="group flex flex-col justify-between rounded-3xl bg-white border border-brand-lightgray p-6 transition-all duration-300 hover:border-brand-main hover:shadow-xl hover:-translate-y-1">
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold text-brand-dark group-hover:text-amber-600 transition-colors">
+                                Zlata 1
+                            </h4>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-brand-lightgrayBack flex items-center justify-between">
+                            <span class="text-xs font-bold text-gray-500 group-hover:text-brand-dark transition-colors">
+                                View the transcript
+                            </span>
+                            <div class="w-8 h-8 rounded-full bg-brand-lightgrayBack group-hover:bg-brand-main flex items-center justify-center text-brand-dark transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- CARD 2 -->
+                    <a href="Zlata-2.html" class="group flex flex-col justify-between rounded-3xl bg-white border border-brand-lightgray p-6 transition-all duration-300 hover:border-brand-main hover:shadow-xl hover:-translate-y-1">
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold text-brand-dark group-hover:text-amber-600 transition-colors">
+                                Zlata 2
+                            </h4>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-brand-lightgrayBack flex items-center justify-between">
+                            <span class="text-xs font-bold text-gray-500 group-hover:text-brand-dark transition-colors">
+                                View the transcript
+                            </span>
+                            <div class="w-8 h-8 rounded-full bg-brand-lightgrayBack group-hover:bg-brand-main flex items-center justify-center text-brand-dark transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- CARD 3 -->
+                    <a href="Zlata-3.html" class="group flex flex-col justify-between rounded-3xl bg-white border border-brand-lightgray p-6 transition-all duration-300 hover:border-brand-main hover:shadow-xl hover:-translate-y-1">
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold text-brand-dark group-hover:text-amber-600 transition-colors">
+                                Zlata 3
+                            </h4>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-brand-lightgrayBack flex items-center justify-between">
+                            <span class="text-xs font-bold text-gray-500 group-hover:text-brand-dark transition-colors">
+                                View the transcript
+                            </span>
+                            <div class="w-8 h-8 rounded-full bg-brand-lightgrayBack group-hover:bg-brand-main flex items-center justify-center text-brand-dark transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </a>
+
+
+
+
+                    <!-- CARD 4 -->
+                    <a href="Bogdan-VI.html" class="group flex flex-col justify-between rounded-3xl bg-white border border-brand-lightgray p-6 transition-all duration-300 hover:border-brand-main hover:shadow-xl hover:-translate-y-1">
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold text-brand-dark group-hover:text-amber-600 transition-colors">
+                                Bogdan
+                            </h4>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-brand-lightgrayBack flex items-center justify-between">
+                            <span class="text-xs font-bold text-gray-500 group-hover:text-brand-dark transition-colors">
+                                View the transcript
+                            </span>
+                            <div class="w-8 h-8 rounded-full bg-brand-lightgrayBack group-hover:bg-brand-main flex items-center justify-center text-brand-dark transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
