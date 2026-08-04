@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine Safety Olympiad - Actions Upon Finding UXO</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#000000',
+                            main: '#d6c844',
+                            lightMain: '#d9d296',
+                            green: '#43db9a',
+                            true: '#c1efcc',
+                            orange: '#ffad40',
+                            orangeHover: '#e7ba33',
+                            yellow: '#fff94e',
+                            remove: '#ffb6c1',
+                            lightgray: '#e5e5e5',
+                            lightgrayBack: '#f5f5f5',
+                            back: '#f9f9f9',
+                            gray: '#cacaca',
+                        }
+                    },
+                    borderRadius: {
+                        '2xl': '1rem',
+                        '3xl': '1.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --dark: #000000;
+            --main: #d6c844;
+            --lightMain: #d9d296;
+            --green: #43db9a;
+            --true: #c1efcc;
+            --orange: #ffad40;
+            --orange-hover: #e7ba33;
+            --yellow: #fff94e;
+            --remove: lightpink;
+            --lightgray: #e5e5e5;
+            --lightgrayBack: #f5f5f5;
+            --back: #f9f9f9;
+            --gray: #cacaca;
+        }
+
+        body {
+            background-color: var(--back);
+            color: var(--dark);
+            padding-bottom: 30svh;
+        }
+
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--lightgrayBack);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gray);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--main);
+        }
+
+        /* Active highlight for transcript block */
+        .transcript-item.active {
+            border-color: var(--main) !important;
+            background-color: #ffffff !important;
+            box-shadow: 0px 0px 100px 10px rgba(214, 200, 68, 0.5) inset;
+            transform: scale(1.005);
+        }
+
+        .max-w-custome {
+            max-width: 140rem;
+        }
+    </style>
+</head>
+<body class="bg-brand-back text-brand-dark font-sans min-h-screen selection:bg-brand-lightMain selection:text-brand-dark">
+
+    <main class="max-w-custome mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Header Title Section -->
+        <header class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-brand-lightgray">
+            <div>
+                <h1 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-brand-dark">
+                    Click on any block to interactively play the clip
+                </h1>
+            </div>
+        </header>
+
+        <!-- 2-Column Grid Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative">
+
+            <!-- LEFT COLUMN: Transcription Timeline (7 Cols) -->
+            <div class="lg:col-span-7 space-y-4 order-2 lg:order-1" id="transcriptContainer">
+
+                <!-- ITEM 1: BANNER 1 (Intro Screen) -->
+                <div data-start="0" data-end="4" class="transcript-item banner-type group rounded-2xl bg-white border border-brand-lightgray p-5 sm:p-6 transition-all duration-300 hover:border-brand-main cursor-pointer shadow-sm">
+                    <div class="flex items-center justify-between mb-3 pb-3 border-b border-brand-lightgrayBack">
+                        <div class="flex items-center gap-2.5">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-extrabold tracking-wider uppercase bg-brand-lightgrayBack text-brand-dark border border-brand-lightgray">
+                                Banner 1
+                            </span>
+                            <span class="text-s font-mono font-semibold text-gray-500 flex items-center gap-1 group-hover:text-brand-dark transition-colors">
+                                <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-brand-main" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                00:00 - 00:04
+                            </span>
+                        </div>
+                        <span class="text-s text-gray-400 font-medium italic hidden sm:inline">Intro Screen</span>
+                    </div>
+
+                    <div class="space-y-1.5 font-mono text-sm sm:text-base text-brand-dark bg-brand-lightgrayBack p-4 rounded-xl border border-brand-lightgray">
+                        <p class="font-extrabold text-lg text-brand-dark">Mine Safety Olympiad</p>
+                        <p class="text-gray-700">Now we will learn about the actions to take in case of discovering UXO (Unexploded Ordnance)</p>
+                    </div>
+
+                    <div class="mt-3 flex items-start gap-2 text-s text-gray-500 italic">
+                        <svg class="w-4 h-4 text-gray-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span>Note: Video created as part of the initial Olympiad launch and submitted by participants</span>
+                    </div>
+                </div>
+
+                <!-- ITEM 2: SPEAKER - STEP 1 -->
+                <div data-start="5" data-end="12" class="transcript-item speaker-type group rounded-2xl bg-white border border-brand-lightgray p-5 sm:p-6 transition-all duration-300 hover:border-brand-main cursor-pointer shadow-sm">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2.5">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-extrabold tracking-wider uppercase bg-brand-main/20 text-brand-dark border border-brand-main">
+                                Speaker
+                            </span>
+                            <span class="text-s font-mono font-semibold text-gray-500 group-hover:text-brand-dark transition-colors">00:05 - 00:12</span>
+                        </div>
+                        <span class="text-s text-gray-600 font-bold">Step 1: Stop and calm down</span>
+                    </div>
+                    <blockquote class="text-brand-dark text-sm sm:text-base leading-relaxed pl-4 border-l-4 border-brand-main bg-brand-lightgrayBack py-3 pr-3 rounded-r-xl font-medium">
+                        "If you see an explosive object, follow clear steps. Step 1: Stop and calm down. The main thing is to freeze and not panic."
+                    </blockquote>
+                </div>
+
+                <!-- ITEM 3: SPEAKER - STEP 2 -->
+                <div data-start="13" data-end="16" class="transcript-item speaker-type group rounded-2xl bg-white border border-brand-lightgray p-5 sm:p-6 transition-all duration-300 hover:border-brand-main cursor-pointer shadow-sm">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2.5">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-extrabold tracking-wider uppercase bg-brand-main/20 text-brand-dark border border-brand-main">
+                                Speaker
+                            </span>
+                            <span class="text-s font-mono font-semibold text-gray-500 group-hover:text-brand-dark transition-colors">00:13 - 00:16</span>
+                        </div>
+                        <span class="text-s text-gray-600 font-bold">Step 2: Stay still and look around</span>
+                    </div>
+                    <blockquote class="text-brand-dark text-sm sm:text-base leading-relaxed pl-4 border-l-4 border-brand-main bg-brand-lightgrayBack py-3 pr-3 rounded-r-xl font-medium">
+                        "Step 2: Do not move and look around. Check if there is any danger nearby."
+                    </blockquote>
+                </div>
+
+                <!-- ITEM 4: SPEAKER - STEP 3 -->
+                <div data-start="17" data-end="27" class="transcript-item speaker-type group rounded-2xl bg-white border border-brand-lightgray p-5 sm:p-6 transition-all duration-300 hover:border-brand-main cursor-pointer shadow-sm">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2.5">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-extrabold tracking-wider uppercase bg-brand-main/20 text-brand-dark border border-brand-main">
+                                Speaker
+                            </span>
+                            <span class="text-s font-mono font-semibold text-gray-500 group-hover:text-brand-dark transition-colors">00:17 - 00:27</span>
+                        </div>
+                        <span class="text-s text-gray-600 font-bold">Step 3: Carefully step back</span>
+                    </div>
+                    <blockquote class="text-brand-dark text-sm sm:text-base leading-relaxed pl-4 border-l-4 border-brand-main bg-brand-lightgrayBack py-3 pr-3 rounded-r-xl font-medium">
+                        "Step 3: Carefully step back. If the path behind you is clear, return back along the exact same path for at least 100 meters. If there are other suspicious objects around, stay where you are, call out for help, or dial 112."
+                    </blockquote>
+                </div>
+
+                <!-- ITEM 5: SPEAKER - STEP 4 -->
+                <div data-start="28" data-end="33" class="transcript-item speaker-type group rounded-2xl bg-white border border-brand-lightgray p-5 sm:p-6 transition-all duration-300 hover:border-brand-main cursor-pointer shadow-sm">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2.5">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-extrabold tracking-wider uppercase bg-brand-main/20 text-brand-dark border border-brand-main">
+                                Speaker
+                            </span>
+                            <span class="text-s font-mono font-semibold text-gray-500 group-hover:text-brand-dark transition-colors">00:28 - 00:33</span>
+                        </div>
+                        <span class="text-s text-gray-600 font-bold">Step 4: Mark danger & call 112</span>
+                    </div>
+                    <blockquote class="text-brand-dark text-sm sm:text-base leading-relaxed pl-4 border-l-4 border-brand-main bg-brand-lightgrayBack py-3 pr-3 rounded-r-xl font-medium">
+                        "Step 4: Warn others. From a safe location, leave a visible mark (a ribbon or a branch) and call 112."
+                    </blockquote>
+                </div>
+
+                <!-- ITEM 6: SPEAKER - GOLDEN RULES HIGHLIGHT -->
+                <div data-start="34" data-end="48" class="transcript-item speaker-type group rounded-3xl bg-brand-lightgrayBack border border-brand-main p-6 sm:p-8 transition-all duration-300 hover:border-brand-dark cursor-pointer shadow-sm">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-brand-lightgray">
+                        <div class="flex items-center gap-2.5">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-black tracking-wider uppercase bg-brand-main text-brand-dark shadow-sm">
+                                Three Golden Rules
+                            </span>
+                            <span class="text-s font-mono text-brand-dark font-bold">00:34 - 00:48</span>
+                        </div>
+                        <span class="text-s text-brand-dark font-extrabold uppercase tracking-wider">Key Takeaway</span>
+                    </div>
+
+                    <blockquote class="text-brand-dark text-base sm:text-lg font-bold leading-relaxed mb-6">
+                        "Knowing these rules is extremely important. This way, you will not only protect yourself, but you can also save the lives of others. If you see danger — don't waste time! Never forget these vital rules:"
+                    </blockquote>
+
+                    <!-- 3 Rules Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-brand-dark border border-brand-dark shadow-sm rounded-2xl p-4 text-center space-y-1">
+                            <div class="text-s font-bold uppercase tracking-wider text-gray-400">Rule 1</div>
+                            <div class="text-xl font-extrabold text-brand-yellow">Don't approach!</div>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-dark shadow-sm rounded-2xl p-4 text-center space-y-1">
+                            <div class="text-s font-bold uppercase tracking-wider text-gray-400">Rule 2</div>
+                            <div class="text-xl font-extrabold text-brand-yellow">Don't touch!</div>
+                        </div>
+                        <div class="bg-brand-dark border border-brand-dark shadow-sm rounded-2xl p-4 text-center space-y-1">
+                            <div class="text-s font-bold uppercase tracking-wider text-gray-400">Rule 3</div>
+                            <div class="text-xl font-extrabold text-brand-yellow">Call 112!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 7: BANNER 2 (Final Screen) -->
+                <div data-start="49" data-end="53" class="transcript-item banner-type group rounded-2xl bg-white border border-brand-lightgray p-5 sm:p-6 transition-all duration-300 hover:border-brand-main cursor-pointer shadow-sm">
+                    <div class="flex items-center justify-between mb-3 pb-3 border-b border-brand-lightgrayBack">
+                        <div class="flex items-center gap-2.5">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-extrabold tracking-wider uppercase bg-brand-lightgrayBack text-brand-dark border border-brand-lightgray">
+                                Banner 2
+                            </span>
+                            <span class="text-s font-mono font-semibold text-gray-500 flex items-center gap-1 group-hover:text-brand-dark transition-colors">
+                                <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-brand-main" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                00:49 - 00:53
+                            </span>
+                        </div>
+                        <span class="text-s text-gray-400 font-medium italic hidden sm:inline">Final Screen</span>
+                    </div>
+
+                    <div class="font-mono text-base sm:text-lg font-black text-center text-brand-dark bg-brand-true/40 p-4 rounded-xl border border-brand-green/50">
+                        Thank you for watching!
+                    </div>
+
+                    <div class="mt-3 space-y-1 text-s text-gray-500 italic">
+                        <p class="flex items-center gap-1 font-semibold text-gray-600">
+                            Supported by: Armed Forces of Ukraine, SES of Ukraine | Funded by: Embassy of Italy in Ukraine, INTERSOS
+                        </p>
+                        <p class="flex items-start gap-2 pt-1">
+                            <svg class="w-4 h-4 text-gray-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span>Note: Video created as part of the initial Olympiad launch and submitted by participants</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: Dynamic Video Player (5 Cols) -->
+            <div class="lg:col-span-5 order-1 lg:order-2">
+                <div id="videoWrapper" class="bg-black rounded-3xl overflow-hidden shadow-2xl border-2 border-brand-dark transition-transform duration-500 ease-out">
+                    <video id="videoPlayer" class="w-full aspect-video object-contain bg-black" controls preload="metadata">
+                        <source src="Злата-відео-2.2---Дії у разі виявлення ВНП.mp4" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('videoPlayer');
+            const videoWrapper = document.getElementById('videoWrapper');
+            const items = document.querySelectorAll('.transcript-item');
+            let currentActiveItem = null;
+
+            // Align video smoothly opposite to the currently active element
+            function alignVideoWithActiveItem(item) {
+                if (window.innerWidth >= 1024 && item) {
+                    const topPos = item.offsetTop;
+                    videoWrapper.style.transform = `translateY(${topPos}px)`;
+                } else {
+                    videoWrapper.style.transform = 'none';
+                }
+            }
+
+            // 1. Seek on click
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    const startTime = parseFloat(item.getAttribute('data-start'));
+                    if (!isNaN(startTime)) {
+                        video.currentTime = startTime;
+                        video.play();
+                    }
+                });
+            });
+
+            // 2. Sync video playback with active element highlight & position
+            video.addEventListener('timeupdate', () => {
+                const currentTime = video.currentTime;
+
+                items.forEach(item => {
+                    const start = parseFloat(item.getAttribute('data-start'));
+                    const end = parseFloat(item.getAttribute('data-end'));
+
+                    if (currentTime >= start && currentTime <= end) {
+                        if (currentActiveItem !== item) {
+                            if (currentActiveItem) {
+                                currentActiveItem.classList.remove('active', 'ring-2', 'ring-brand-main');
+                            }
+                            item.classList.add('active', 'ring-2', 'ring-brand-main');
+                            currentActiveItem = item;
+
+                            // Move video opposite to current active block
+                            alignVideoWithActiveItem(item);
+
+                            // Smooth scroll into view
+                            item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    } else if (currentActiveItem === item) {
+                        item.classList.remove('active', 'ring-2', 'ring-brand-main');
+                        currentActiveItem = null;
+                    }
+                });
+            });
+
+            // Re-align video position on screen resize
+            window.addEventListener('resize', () => {
+                alignVideoWithActiveItem(currentActiveItem);
+            });
+        });
+    </script>
+</body>
+</html>
